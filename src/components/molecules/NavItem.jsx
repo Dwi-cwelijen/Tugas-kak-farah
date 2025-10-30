@@ -21,7 +21,7 @@ export default function NavItem({data}) {
               }`}
             >
               <Link to={item.path} aria-current={isActive ? "page" : undefined}>
-                <Text text={item.label}  />
+                <Text text={item.label} className={" md:text-lg font-extrabold"} />
               </Link>
             </li>
           );

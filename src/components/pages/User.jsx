@@ -63,7 +63,7 @@ export default function User() {
       <div className=" p-5 relative">
 
         <div className="flex justify-between">
-          <Heading level={2} className={"md:text-3xl md:font-bold"}  variant={"gray"}>
+          <Heading level={3} className={"md:text-3xl font-serif md:font-bold"}  variant={"gray"}>
              DATA PENGGUNA
           </Heading>
           <Button onClick={() => setIsOpen(true)} text="Tambah" variant="tambah" />

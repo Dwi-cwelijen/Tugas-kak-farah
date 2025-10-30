@@ -3,7 +3,7 @@ export default function Button ({onClick,text,variant,className,type}) {
         simpan: "text-white bg-sky-400 hover:bg-sky-950",
         edit : "text-white bg-yellow-300 hover:bg-yellow-500",
         hapus : "text-white bg-red-600 hover:bg-red-900",
-        tambah : "text-white  bg-sky-950 hover:bg-white hover:text-black shadow-xl/30 font-bold"
+        tambah : "text-white  bg-sky-950 hover:bg-white hover:text-black shadow-lg font-bold"
         
 
     };
