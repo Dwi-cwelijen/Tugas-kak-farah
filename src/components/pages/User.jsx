@@ -15,6 +15,7 @@ export default function User() {
     handleChange,
     handleSubmit,
     editId,
+    resetForm
   } = useGlobal();
 
   const type = "user";
@@ -59,10 +60,10 @@ export default function User() {
 
   return (
     <Main>
-      <div className="p-5">
+      <div className=" p-5 relative">
 
         <div className="flex justify-between">
-          <Heading level={1} variant={"gray"}>
+          <Heading level={2} className={"md:text-3xl md:font-bold"}  variant={"gray"}>
              DATA PENGGUNA
           </Heading>
           <Button onClick={() => setIsOpen(true)} text="Tambah" variant="tambah" />
@@ -71,8 +72,11 @@ export default function User() {
 
 
        {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/20 z-50">
-          <div className="bg-white border p-6 rounded mx-4 border-white shadow-lg w-full max-w-lg relative">
+        <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
+          <div className="bg-white border p-6 rounded-xl mx-4 border-white shadow-lg w-full max-w-lg relative">
+            <h2 className="text-xl font-semibold mb-4">
+                {editId ? "Edit Barang" : "Tambah Barang"}
+            </h2>
             <Form
               fields={fields}
               formData={formData}
@@ -87,8 +91,8 @@ export default function User() {
               type="button"
               text="Batal"
               variant="hapus"
-              onClick={() => setIsOpen(false)}
-              />
+              onClick={() => {resetForm(fields); setIsOpen(false);}}
+               />
 
             </div>
           </div>
@@ -98,6 +102,7 @@ export default function User() {
         <Table
           table={kolom}
           data={dataWithAction}
+          className= "border-collapse border border-gray-300 w-full"
           
         />
       </div>

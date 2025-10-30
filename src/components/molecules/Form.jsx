@@ -39,7 +39,7 @@ export default function Form({ fields = [], formData, handleChange, handleSubmit
         </div>
       ))}
 
-      <Button type="submit" variant="simpan" text={action === "update" ? "Update" : "Simpan"} />
+      <Button type="submit"  variant={action === "update" ? "edit" : "simpan"} text={action === "update" ? "Update" : "Simpan"} />
     </form>
   );
 }

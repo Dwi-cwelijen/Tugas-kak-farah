@@ -15,6 +15,7 @@ export default function Barang() {
     handleChange,
     handleSubmit,
     editId,
+    resetForm
   } = useGlobal();
 
   const type = "barang";
@@ -53,18 +54,18 @@ export default function Barang() {
 
   return (
     <Main>
-      <div className="p-5 relative">
+      <div className="p-5 md:p-8 relative">
 
         <div className="flex justify-between mb-4">
-          <Heading level={2}className={"md:text-3xl md:font-bold"} variant={"gray"}>
+          <Heading level={2} className={"md:text-3xl md:font-bold"} variant={"gray"}>
               DATA PRODUK
           </Heading>
           <Button onClick={() => setIsOpen(true)} text="Tambah" variant="tambah" />
         </div>
 
         {isOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black/20 z-50">
-            <div className="bg-white border  border-white p-6 rounded-xl mx-4 shadow-2xl w-full max-w-lg relative">
+          <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
+            <div className="bg-white border  border-white p-6 rounded-xl mx-4 shadow-2xl w-full md:max-w-lg max-w-sm relative">
               <h2 className="text-xl font-semibold mb-4">
                 {editId ? "Edit Barang" : "Tambah Barang"}
               </h2>
@@ -84,7 +85,7 @@ export default function Barang() {
                   type="button"
                   text="Batal"
                   variant="hapus"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {resetForm(fields); setIsOpen(false);}}
                 />
               </div>
             </div>

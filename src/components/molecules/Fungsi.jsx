@@ -41,7 +41,7 @@ export default function Fungsi({ row, type, fields }) {
   }, []);
 
   return (
-    <div className="relative inline-block" ref={menuRef}>
+    <div className="relative inline-block " ref={menuRef}>
       <Button
         onClick={() => setMenu(!menu)}
         text={menu ? <Icon name="batal" /> : <Icon name="menu" />}
@@ -50,18 +50,17 @@ export default function Fungsi({ row, type, fields }) {
 
       {menu && (
         <div
-          className="absolute right-0 mt-2 w-28 flex flex-col bg-white border border-gray-200 
+          className="absolute md:w-30 shadow-xl/20 right-0 mt-2 w-20 flex flex-col border-gray-200 
           rounded-lg shadow-lg overflow-hidden z-20 animate-fadeIn"
         >
           {pilih.map((tombol) => (
-            <button
+            <Button
               key={tombol.key}
               onClick={tombol.onClick}
-              className={`px-3 py-2 text-sm text-left hover:bg-gray-100 transition 
-                ${tombol.style === "hapus" ? "text-red-600" : "text-gray-800"}`}
-            >
-              {tombol.text}
-            </button>
+              variant={tombol.style}
+              text={tombol.text}
+              className={"text-center mb-0 m-1 "}
+            />
           ))}
         </div>
       )}
