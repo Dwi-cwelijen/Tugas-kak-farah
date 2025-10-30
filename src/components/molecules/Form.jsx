@@ -30,6 +30,7 @@ export default function Form({ fields = [], formData, handleChange, handleSubmit
           (
             <Input
               id={field.id}
+              min={0}
               type={field.type}
               placeholder={field.placeholder}
               value={formData?.[field.id] ?? ""}

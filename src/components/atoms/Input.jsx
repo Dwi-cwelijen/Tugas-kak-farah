@@ -1,8 +1,9 @@
-export default function Input({ type = "text", value, onChange, placeholder,id, className = "" }) {
+export default function Input({ type = "text", value, onChange, placeholder,id,min, className = "" }) {
   return (
     <input
       id={id} 
       type={type}
+      min={min}
       value={value}
       onChange={onChange}
       placeholder={placeholder}
